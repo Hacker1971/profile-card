@@ -1,0 +1,30 @@
+body{
+    background: #dadada;
+}
+
+.profile-area{
+    padding-top: 80px;
+}
+
+.img2 img{
+    position: relative;
+    margin-top: -50px;
+    margin-left: 32%;
+    border: 5px solid rgb(231, 238, 231);
+    border-radius: 50% ;
+    
+}
+.img2 img:hover{
+    border-radius: 50% ;
+    border: 5px  solid  green;
+    
+    
+}
+.card-body > p{
+    text-align: justify;
+}
+.social{
+   margin-left: 32%;
+   color: rgb(8, 137, 30);
+   word-spacing: 20px;
+}
