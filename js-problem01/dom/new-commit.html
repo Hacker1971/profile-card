@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>commit it</title>
+</head>
+<body>
+    <div id="comment-container">
+        <h1>please add your comment</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt suscipit, quos illo quasi facere dolorum fugiat ab dolores minima dolor ducimus, commodi sapiente. Sit commodi nam impedit cum doloribus. Aliquid quasi adipisci, numquam vel reiciendis commodi odio sit deleniti mollitia reprehenderit velit aperiam molestiae. Fugit fugiat corrupti recusandae cumque ipsa!</p>
+    <p>Nisi laudantium, nesciunt vero illo iste quod deleniti esse magnam ipsam? Consectetur atque expedita id at quidem sequi. Error magni doloremque eum aliquid, saepe ex optio voluptatem eligendi cum, ea ipsum excepturi repudiandae. Labore, non facere sed debitis tenetur soluta quos laborum. Eligendi, numquam maiores delectus at adipisci ullam ipsam!</p>
+    <p>Neque perspiciatis iusto ea tenetur velit nulla nam quos sit accusamus sed rerum ratione, autem natus ullam fuga sint beatae vitae odio molestias doloremque unde atque. Magnam qui est praesentium repudiandae placeat, assumenda corrupti dolorum incidunt voluptates fugiat. Et molestias quos qui itaque, provident libero vero corporis illum aliquid autem!</p>
+    </div>
+    <div>
+        <textarea name="" id="text-area" cols="60" rows="5" placeholder=" commit here....."></textarea>
+        <br>
+         <button id="btn-post">post</button>
+    </div>
+    <script>
+    document.getElementById('btn-post').addEventListener('click',function(){
+        const commitBox = document.getElementById('text-area');
+         const newCommit = commitBox.value;
+
+
+         const commenonTtainer = document.getElementById('comment-container');
+         const p = document.createElement('p');
+         p.innerText= newCommit;
+         commenonTtainer.appendChild(p);
+         commitBox.value = '';
+         
+
+       
+
+
+    })
+    </script>
+    <script src="./new-js.js"></script>
+</body>
+</html>

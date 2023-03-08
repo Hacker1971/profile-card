@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js-comment</title>
+</head>
+<body>
+    <h2 id="new-text" style="color: red;">Defalt text</h2>
+    <input type="text" name="" id="text-input"><br><br>
+    <button id="btn-input">input</button><br><br>
+    <h1>Final Dom Event</h1>
+    <h3  id="text-chance">DEfault text</h3>
+    <button onclick="clickME()">Event button</button>
+    <button id="Event">Event-02 button</button>
+    
+    <script>
+        document.getElementById('btn-input').addEventListener('click',function(){
+            const textMe = document.getElementById('text-input');
+           const input_text_me = textMe.value;
+           const p = document.getElementById('new-text');
+           p.innerText = input_text_me;
+           textMe.value='';
+
+
+            
+        })
+       
+    </script>
+
+    <script src="./commit.js"></script>
+</body>
+</html>

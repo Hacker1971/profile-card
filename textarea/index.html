@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #textarea {
+  height: 200px;
+  width: 500px;
+  font-size: 16px;
+            }
+    </style>
+</head>
+<body>
+    <textarea  name="" id="textarea" cols="30" rows="10"></textarea>
+
+<button id="bold">Bold</button>
+<button id="italic">Italic</button>
+<button id="underline">Underline</button>
+<button id="left-align">Left Align</button>
+<button id="center-align">Center Align</button>
+<button id="right-align">Right Align</button>
+
+<input type="number" id="font-size" value="16">
+<button id="font-size-button">Change Font Size</button>
+
+<input type="color" id="color-picker">
+<button id="color-button">Change Color</button>
+
+<script>
+const textarea = document.getElementById("textarea");
+const boldButton = document.getElementById("bold");
+const italicButton = document.getElementById("italic");
+const underlineButton = document.getElementById("underline");
+const leftAlignButton = document.getElementById("left-align");
+const centerAlignButton = document.getElementById("center-align");
+const rightAlignButton = document.getElementById("right-align");
+const fontSizeInput = document.getElementById("font-size");
+const fontSizeButton = document.getElementById("font-size-button");
+const colorPicker = document.getElementById("color-picker");
+const colorButton = document.getElementById("color-button");
+
+boldButton.addEventListener("click", function() {
+  textarea.style.fontWeight = "bold";
+});
+
+italicButton.addEventListener("click", function() {
+  textarea.style.fontStyle = "italic";
+});
+
+underlineButton.addEventListener("click", function() {
+  textarea.style.textDecoration = "underline";
+});
+
+leftAlignButton.addEventListener("click", function() {
+  textarea.style.textAlign = "left";
+});
+
+centerAlignButton.addEventListener("click", function() {
+  textarea.style.textAlign = "center";
+});
+
+rightAlignButton.addEventListener("click", function() {
+  textarea.style.textAlign = "right";
+});
+
+fontSizeInput.addEventListener("input", function() {
+  const fontSize = parseInt(fontSizeInput.value);
+  if (!isNaN(fontSize)) {
+    textarea.style.fontSize = fontSize + "px";
+  }
+});
+colorButton.addEventListener("click", function() {
+  textarea.style.color = colorPicker.value;
+});
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ .shopping-cart, .product-list {
+  width: 500px;
+  margin: 20px auto;
+}
+
+.shopping-cart {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-items img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.cart-total {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.cart-buttons {
+  margin-top: 20px;
+}
+
+.cart-buttons button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.product-list {
+  text-align: center;
+}
+
+.products {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.products li {
+  display: inline-block;
+  margin: 10px;
+  width: 200px;
+}
+
+.products img {
+  width: 100%;
+}
+
+.products h3, .products p {
+  margin: 5px 0;
+}
+
+.products p {
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+    <div class="shopping-cart">
+        <h2>Shopping Cart</h2>
+        <ul class="cart-items"></ul>
+        <div class="cart-total">
+          Total: <span class="total-amount">$0.00</span>
+        </div>
+        <div class="cart-buttons">
+          <button class="clear-cart">Clear Cart</button>
+          <button class="checkout">Checkout</button>
+        </div>
+      </div>
+      
+      <div class="product-list">
+        <h2>Products</h2>
+        <ul class="products"></ul>
+      </div>
+      
+<script>
+    const products = [
+  {
+    id: 1,
+    name: "Product 1",
+    price: 10.00,
+    image: "product1.jpg"
+  },
+  {
+    id: 2,
+    name: "Product 2",
+    price: 20.00,
+    image: "product2.jpg"
+  },
+  {
+    id: 3,
+    name: "Product 3",
+    price: 30.00,
+    image: "product3.jpg"
+  }
+];
+
+const cart = {
+  items: [],
+  total: 0
+};
+
+const cartItems = document.querySelector(".cart-items");
+const totalAmount = document.querySelector(".total-amount");
+const clearCartBtn = document.querySelector(".clear-cart");
+const checkoutBtn = document.querySelector(".checkout");
+const productsList = document.querySelector(".products");
+
+// Add product to cart
+function addProductToCart(product) {
+  const cartItem = cart.items.find(item => item.id === product.id);
+  if (cartItem) {
+    cartItem.quantity++;
+  } else {
+    cart.items.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1
+    });
+  }
+  cart.total += product.price;
+}
+
+// Remove product from cart
+function removeProductFromCart(productId) {
+  const cartItemIndex = cart.items.findIndex(item => item.id === productId);
+  const cartItem = cart.items[cartItemIndex];
+ 
+};
+
+
+</script>
+
+
+</body>
+</html>
